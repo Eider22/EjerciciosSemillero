@@ -10,52 +10,38 @@ public class Cuenta {
 	public Cuenta(float saldo, float tasaAnual) {
 		this.saldo = saldo;
 		this.tasaAnual = tasaAnual / 100;
-//		this.comisionMensual = 2000;
 	}
 
 	public void consignarDinero(int cantidad) {
-		//Consignar una cantidad de dinero en la cuenta actualizando su saldo.
 		this.saldo += cantidad;
-		this.numeroConsignaciones ++;
+		this.numeroConsignaciones++;
 	}
-	
+
 	public void retirarDinero(int cantidad) {
-		//Retirar una cantidad de dinero en la cuenta actualizando su saldo.
-		//El valor a retirar no debe superar el saldo.
-		if(this.saldo < cantidad) {
+		if (this.saldo < cantidad) {
 			return;
 		}
-		
+
 		this.saldo -= cantidad;
-		this.numeroRetiros ++;
+		this.numeroRetiros++;
 
 	}
-	
+
 	public void calcularInteresMensual() {
-		//•	Calcular el interés mensual de la cuenta y actualiza el saldo correspondiente.	
-		float interesMensual = this.saldo * (this.tasaAnual/12);
+		float interesMensual = this.saldo * (this.tasaAnual / 12);
 		this.saldo += interesMensual;
 	}
 
 	public void extractoMensual() {
-		//Extracto mensual: actualiza el saldo restándole la comisión mensual
 		this.saldo -= this.comisionMensual;
-		//y calculando el interés mensual correspondiente (invoca el método
-		//	anterior).
 		this.calcularInteresMensual();
 	}
-	
+
 	public void imprimir() {
-		System.out.println("Saldo: $" + this.saldo
-				+ "\nNumero de consignaciones: " + this.numeroConsignaciones
-				+ "\nTasa anual : " + this.tasaAnual * 100 + "%"
-				+ "\nComisión mensual: $" + this.comisionMensual);
-	}	
-	
-	
-	
-	
-	
+		System.out.println("Saldo: $" + this.saldo + "\nNumero de consignaciones: " + this.numeroConsignaciones
+				+ "\nTasa anual : " + this.tasaAnual * 100 + "%" + "\nComisión mensual: $" + this.comisionMensual);
+	}
+
 	public float getSaldo() {
 		return saldo;
 	}
