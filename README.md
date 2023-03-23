@@ -56,7 +56,8 @@ La clase Cuenta tiene dos clases hijas:
 
 
 	Cuenta corriente: posee un atributo de sobregiro, el cual se inicializa en cero. Se redefinen los 	siguientes métodos::
-		- Retirar: se retira dinero de la cuenta actualizando su saldo. Se puede retirar dinero superior 			al saldo. 
+		- Retirar: se retira dinero de la cuenta actualizando su saldo. Se puede retirar
+		dinero superioral saldo. 
 		El dinero que se debe  queda como sobregir
 		
 		- Consignar: invoca al método heredado. Si hay sobregiro, la cantidad consignada reduce el
